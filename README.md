@@ -8,5 +8,3 @@ ForenVision-AI is a modular Flask application for forensic case review, evidence
 pip install -r requirements.txt
 python app.py
 ```
-
-Then open http://127.0.0.1:5000.

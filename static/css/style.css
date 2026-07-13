@@ -1,0 +1,69 @@
+:root {
+  --bg: #07111f;
+  --surface: #101a2b;
+  --surface-alt: #1b2a3e;
+  --text: #f3f6fb;
+  --muted: #90a1b8;
+  --accent: #2c7be5;
+  --accent-2: #38c172;
+}
+
+body {
+  background: linear-gradient(135deg, var(--bg), #0f172a);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: rgba(16, 26, 43, 0.95);
+  min-height: 100vh;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-link {
+  color: var(--muted);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.9rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text);
+  background: rgba(44, 123, 229, 0.18);
+}
+
+.main-content {
+  background: rgba(8, 15, 27, 0.35);
+  min-height: 100vh;
+}
+
+.card,
+.table,
+.form-control,
+.form-select,
+.btn {
+  border-radius: 0.8rem;
+}
+
+.metric-card {
+  background: linear-gradient(145deg, var(--surface), var(--surface-alt));
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.table {
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}

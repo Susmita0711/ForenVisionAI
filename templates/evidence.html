@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h4 mb-3">Crime Scene Evidence Intake</h2>
+        <form method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label class="form-label">Case Title</label>
+            <input type="text" class="form-control" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" name="category">
+              <option>Scene</option>
+              <option>Vehicle</option>
+              <option>Property</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Evidence Summary</label>
+            <textarea class="form-control" name="summary" rows="4"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Evidence Image</label>
+            <input class="form-control" type="file" name="image" accept="image/*" required>
+          </div>
+          <button class="btn btn-primary" type="submit">Analyze Evidence</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

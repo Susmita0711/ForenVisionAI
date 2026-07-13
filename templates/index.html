@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="h3">Investigation Dashboard</h1>
+    <p class="text-muted">Operational overview for the ForenVision-AI forensic suite.</p>
+  </div>
+  <a href="{{ url_for('evidence') }}" class="btn btn-primary">New Evidence Review</a>
+</div>
+
+<div class="row g-4 mb-4">
+  <div class="col-md-3">
+    <div class="card metric-card shadow-sm">
+      <div class="card-body">
+        <h6 class="text-uppercase text-muted">Active Cases</h6>
+        <h2 class="display-6">{{ cases|length }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card metric-card shadow-sm">
+      <div class="card-body">
+        <h6 class="text-uppercase text-muted">Evidence Items</h6>
+        <h2 class="display-6">12</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card metric-card shadow-sm">
+      <div class="card-body">
+        <h6 class="text-uppercase text-muted">Fingerprint Hits</h6>
+        <h2 class="display-6">4</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card metric-card shadow-sm">
+      <div class="card-body">
+        <h6 class="text-uppercase text-muted">Avg. Match Score</h6>
+        <h2 class="display-6">74%</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">Recent Cases</h5>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Case</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for case in cases %}
+        <tr>
+          <td>{{ case.title }}</td>
+          <td>{{ case.category }}</td>
+          <td><span class="badge bg-success">{{ case.status }}</span></td>
+          <td>{{ case.created_at[:19] }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4" class="text-muted">No recent cases yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

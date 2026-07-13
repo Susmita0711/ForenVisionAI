@@ -1,0 +1,5 @@
+Flask==3.0.2
+opencv-python-headless==4.9.0.80
+ultralytics==8.1.29
+reportlab==4.1.0
+numpy==1.26.4

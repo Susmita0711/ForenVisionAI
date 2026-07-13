@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h4 mb-3">Witness Sketch Profile Mapping</h2>
+        <form method="post">
+          <div class="mb-3">
+            <label class="form-label">Case Title</label>
+            <input type="text" class="form-control" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" name="category">
+              <option>Sketch</option>
+              <option>Composite</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Witness Summary</label>
+            <textarea class="form-control" name="summary" rows="4"></textarea>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Hair</label>
+              <input class="form-control" type="text" name="hair" placeholder="Black, short">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Eyes</label>
+              <input class="form-control" type="text" name="eyes" placeholder="Hazel">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Build</label>
+              <input class="form-control" type="text" name="build" placeholder="Athletic">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Clothing</label>
+              <input class="form-control" type="text" name="clothing" placeholder="Dark jacket">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Notable Features</label>
+              <textarea class="form-control" name="features" rows="3"></textarea>
+            </div>
+          </div>
+          <button class="btn btn-primary mt-4" type="submit">Generate Sketch Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
